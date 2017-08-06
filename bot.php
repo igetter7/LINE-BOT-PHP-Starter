@@ -1,5 +1,7 @@
 <?php
 
+require __DIR__ . './vendor/autoload.php';
+
 $bot = new \LINE\LINEBot(new CurlHTTPClient('29m4MYSWqUiJG+cv9rpX3mb+G+JAZ+m7Wq5UKgeKiKJzLZELncR8PLH8/6MHt7/hndfFH0B7kGe9dPiObjLyID3o3h1yajodmF+yMVTsrIBhuglvPVrCeed2+YjDgi57+PFe1pCJ4XgW7oCPElbUBgdB04t89/1O/w1cDnyilFU='), [
     'channelSecret' => 'cc07034a217a0a432686937e5fc6203e'
 ]);
