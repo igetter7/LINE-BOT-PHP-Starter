@@ -1,49 +1,45 @@
 <?php
 
-// require_once __DIR__.'./vendor/autoload.php';
+require_once __DIR__.'./vendor/autoload.php';
 
-// use Monolog\Logger;
-// use Monolog\Handler\StreamHandler;
-// use Monolog\Handler\FirePHPHandler;
+use Monolog\Logger;
+use Monolog\Handler\StreamHandler;
+use Monolog\Handler\FirePHPHandler;
 
-// use LINE\LINEBot;
+use LINE\LINEBot;
 
+class Bot
+{
 
-// /**
-// * 
-// */
-// class Bot
-// {
-
-// 	public $bot = null;
+	public $bot = null;
 	
-// 	function __construct()
-// 	{
+	function __construct()
+	{
 
-// 		$logger = new Logger('LineBot');
-// 		$logger->pushHandler(new StreamHandler('php://stderr', Logger::DEBUG));
+		$logger = new Logger('LineBot');
+		$logger->pushHandler(new StreamHandler('php://stderr', Logger::DEBUG));
 
-// 		$httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient('U5ddac8a518939a9f0a2efba0b2f3818b');
-// 		$this->bot = new \LINE\LINEBot($httpClient, ['channelSecret' => '29m4MYSWqUiJG+cv9rpX3mb+G+JAZ+m7Wq5UKgeKiKJzLZELncR8PLH8/6MHt7/hndfFH0B7kGe9dPiObjLyID3o3h1yajodmF+yMVTsrIBhuglvPVrCeed2+YjDgi57+PFe1pCJ4XgW7oCPElbUBgdB04t89/1O/w1cDnyilFU=']);
-// 	}
+		$httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient('U5ddac8a518939a9f0a2efba0b2f3818b');
+		$this->bot = new \LINE\LINEBot($httpClient, ['channelSecret' => '29m4MYSWqUiJG+cv9rpX3mb+G+JAZ+m7Wq5UKgeKiKJzLZELncR8PLH8/6MHt7/hndfFH0B7kGe9dPiObjLyID3o3h1yajodmF+yMVTsrIBhuglvPVrCeed2+YjDgi57+PFe1pCJ4XgW7oCPElbUBgdB04t89/1O/w1cDnyilFU=']);
+	}
 
-// 	public function push($text='')
-// 	{
-// 		$textMessageBuilder = new \LINEBot\MessageBuilder\TextMessageBuilder('hello');
-// 		$response = $this->bot->pushMessage('<to>', $textMessageBuilder);
+	public function push($text='')
+	{
+		$textMessageBuilder = new \LINEBot\MessageBuilder\TextMessageBuilder('hello');
+		$response = $this->bot->pushMessage('<to>', $textMessageBuilder);
 
-// 		echo $response->getHTTPStatus() . ' ' . $response->getRawBody();
-// 	}
+		echo $response->getHTTPStatus() . ' ' . $response->getRawBody();
+	}
 
-// 	public function reply($replyToken,$text)
-// 	{
+	public function reply($replyToken,$text)
+	{
 
-// 		$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder('hello');
-// 		$response = $this->bot->replyMessage($replyToken, $textMessageBuilder);
+		$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder('hello');
+		$response = $this->bot->replyMessage($replyToken, $textMessageBuilder);
 
-// 		echo $response->getHTTPStatus() . ' ' . $response->getRawBody();
-// 	}
-// }
+		echo $response->getHTTPStatus() . ' ' . $response->getRawBody();
+	}
+}
 
 
 
