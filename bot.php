@@ -69,7 +69,7 @@ class Bot
 // 	}
 // }
 
-public function getWeather()
+function getWeather()
   {
     //$url = "http://api.openweathermap.org/data/2.5/weather?q=Bangkok&appid=ec1f7da303ae60f6e839fc6d55973804&units=metric";
     $url = "http://api.openweathermap.org/data/2.5/weather?q=Lat%20Krabang&appid=ec1f7da303ae60f6e839fc6d55973804&units=metric";
@@ -131,7 +131,7 @@ public function getWeather()
   }
 
 
-public function analystInput($text='')
+function analystInput($text='')
 {
 	$firstlevel = array(
 		'อากาศ' => 'weather', 
@@ -153,7 +153,8 @@ public function analystInput($text='')
 		'กินข้าว' => 'time', 
 		'หิว' => 'time', 
 		'ยังไง' => 'traffic', 
-
+		'หวัดดี' => 'greeting',
+		'ว่าไง' => 'greeting',
 		);
 
 	$when = array(
