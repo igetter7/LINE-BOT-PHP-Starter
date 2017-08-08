@@ -204,6 +204,19 @@ class Bot
 	 	$resparrsize = sizeof($resp)-1;
     	return $resp[rand(0,$resparrsize)];
 	 }
+
+	 public function sayThankyou($found='')
+	 {
+	 	$resp = [
+		 		'สบายดีครับ',
+		 		'ก็ดีครับ',
+		 		'ก็เรื่อยๆครับ',
+		 		'ก็ดีครับ ขอบคุณคร้าบ',
+		 		'แฮ่ะๆๆ',
+	 		];
+	 	$resparrsize = sizeof($resp)-1;
+    	return $resp[rand(0,$resparrsize)];
+	 }
 }
 
 
@@ -278,6 +291,10 @@ function analystInput($text='')
 		'ว่าไง' => 'greeting',
 		'โหล' => 'greeting',
 
+		'สบายดีมั้ย' => 'howareyou',
+		'สบายดี' => 'howareyou',
+		'สบายดี' => 'howareyou',
+
 		'บาย' => 'bye',
 		'ลาก่อย' => 'bye',
 		'ลาก่อน' => 'bye',
@@ -350,7 +367,10 @@ function analystInput($text='')
 		$resp_text = $a_bot->sayRude(2,$found);
 	}  else if($question == 'rude3') {
 		$resp_text = $a_bot->sayRude(3,$found);
+	}   else if($question == 'howareyou') {
+		$resp_text = $a_bot->sayThankyou($found);
 	} 
+
 
 
 
