@@ -169,6 +169,38 @@ class Bot
     	return $hi[rand(0,$hiArraySize)];
 	 }
 
+	 public function sayCall($text = '')
+	 {
+	 	$hi = [
+		 	'ค้าบผม',
+		 	'^^',
+		 	'ว่าไงค้าบ',
+		 	'ค้าบ',
+		 	'ครัช',
+		 	':)',
+
+	 	];
+	 	$hiArraySize = sizeof($hi)-1;
+    	return $hi[rand(0,$hiArraySize)];
+	 }
+
+	 public function sayLotto($text = '')
+	 {
+	 	$hi = [
+		 	'123 ตรงๆครับ',
+		 	'3850274 ตรงๆครับ',
+		 	'3425262 ตรงๆครับ',
+		 	'9678555 ตรงๆครับ',
+		 	'ไม่บอก',
+		 	'ไปขูดต้นมะขามเถอะครับ',
+		 	'ถ้ารู้ไดโน่ก็รวยแล้วดิ',
+		 	'ง่ะ',
+
+	 	];
+	 	$hiArraySize = sizeof($hi)-1;
+    	return $hi[rand(0,$hiArraySize)];
+	 }
+
 	 public function sayBye($text)
 	 {
 	 	$bye = [
@@ -214,6 +246,8 @@ class Bot
 		 		$text.'คืออะไรครับไดโน่เกิดไม่ทัน',
 		 		$text.'คืออะไรครับไดโน่เรียนมาน้อย',
 		 		$text.'เช่นกันค้าบบบ',
+		 		'ง่ะ',
+		 		'เอาที่สบายใจเลยครัชชช'
 	 		];
 	 	}
 
@@ -297,12 +331,12 @@ function analystInput($text='')
 
 	$secondlevel = array(
 		'ชื่ออะไร' => 'name', 
-		'อายุ' => 'weather', 
-		'มีแฟน' => 'weather', 
-		'ง่วง' => 'weather', 
-		'กินข้าว' => 'time', 
-		'หิว' => 'time', 
-		'ยังไง' => 'traffic', 
+		'อายุ' => 'age', 
+		'มีแฟน' => 'fan', 
+		'ง่วง' => 'sleep', 
+		'กินข้าว' => 'eat', 
+		'หิว' => 'hungry', 
+		'ยังไง' => 'howareyou', 
 		'หวัดดี' => 'greeting',
 		'ว่าไง' => 'greeting',
 		'โหล' => 'greeting',
@@ -321,6 +355,17 @@ function analystInput($text='')
 		'thank' => 'thx',
 		'กิ้ว' => 'thx',
 		'แต้ง' => 'thx',
+
+		'ได' => 'call',
+		'ไดโน่' => 'call',
+		'dino' => 'call',
+		'Dino' => 'call',
+
+		'หวย' => 'lotto',
+		'งวดหน้า' => 'lotto',
+		'งวดนี้' => 'lotto',
+		'ขอเลข' => 'lotto',
+
 
 		'บาย' => 'bye',
 		'ลาก่อย' => 'bye',
@@ -398,7 +443,11 @@ function analystInput($text='')
 		$resp_text = $a_bot->sayThankyou($found);
 	} else if($question == 'thx') {
 		$resp_text = $a_bot->sayYourwelcome($found);
-	} 
+	} else if($question == 'call') {
+		$resp_text = $a_bot->sayCall($found);
+	} else if($question == 'lotto') {
+		$resp_text = $a_bot->sayLotto($found);
+	}   
 
 
 
