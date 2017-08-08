@@ -48,25 +48,25 @@ class Bot
 
 
 
-// $bots = new Bot();
-// // Get POST body content
-// $content = file_get_contents('php://input');
-// $events = json_decode($content, true);
-// if (!is_null($events['events'])) {
-// 	if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
-// 			$text = $event['message']['text'];
-// 			$replyToken = $event['replyToken'];
+$bots = new Bot();
+// Get POST body content
+$content = file_get_contents('php://input');
+$events = json_decode($content, true);
+if (!is_null($events['events'])) {
+	if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
+			$text = $event['message']['text'];
+			$replyToken = $event['replyToken'];
 
-// 			$messages = [
-// 				'type' => 'text',
-// 				'text' => $text
-// 			];
+			$messages = [
+				'type' => 'text',
+				'text' => $text
+			];
 
-// 			$bots->reply($replyToken,$text);
-// 	}
-// }
+			$bots->reply($replyToken,$text);
+	}
+}
 
-// echo "hi";
+echo "hi";
 
 
 
