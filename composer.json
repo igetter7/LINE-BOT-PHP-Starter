@@ -1,6 +1,6 @@
 {
     "require": {
-        "guzzlehttp/guzzle": ">=6.2.2",
+        "guzzlehttp/guzzle": "^6.3",
         "linecorp/line-bot-sdk": "^2.2",
         "monolog/monolog": "^1.23"
     }
